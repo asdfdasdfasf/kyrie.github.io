@@ -1,0 +1,340 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>kyrieIrving</title><meta name="author" content="敲代码的小帅帅"><meta name="copyright" content="敲代码的小帅帅"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="永远不停的在敲代码">
+<meta property="og:type" content="website">
+<meta property="og:title" content="kyrieIrving">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="kyrieIrving">
+<meta property="og:description" content="永远不停的在敲代码">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/yao.png">
+<meta property="article:author" content="敲代码的小帅帅">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/yao.png"><link rel="shortcut icon" href="/kyrie.github.io/img/favicon.png"><link rel="canonical" href="http://example.com/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="yandex-verification" content="{&quot;theme_color&quot;:{&quot;enable&quot;:true,&quot;main&quot;:&quot;#49B1F5&quot;,&quot;paginator&quot;:&quot;#00c4b6&quot;,&quot;button_hover&quot;:&quot;#FF7242&quot;,&quot;text_selection&quot;:&quot;#00c4b6&quot;,&quot;link_color&quot;:&quot;#99a9bf&quot;,&quot;meta_color&quot;:&quot;#858585&quot;,&quot;hr_color&quot;:&quot;#A4D8FA&quot;,&quot;code_foreground&quot;:&quot;#F47466&quot;,&quot;code_background&quot;:&quot;rgba(27, 31, 35, .05)&quot;,&quot;toc_color&quot;:&quot;#00c4b6&quot;,&quot;blockquote_padding_color&quot;:&quot;#49b1f5&quot;,&quot;blockquote_background_color&quot;:&quot;#49b1f5&quot;}}"/><link rel="manifest" href="/kyrie.github.io/image/pwa/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/kyrie.github.io/image/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/kyrie.github.io/image/pwa/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/kyrie.github.io/image/pwa/16.png"/><link rel="mask-icon" href="/kyrie.github.io/image/pwa/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/kyrie.github.io/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/kyrie.github.io/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 敲代码的小帅帅","link":"链接: ","source":"来源: kyrieIrving","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: {"text":"凯里,欧文,最棒","fontSize":"15px"},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-01-20 20:25:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/kyrie.github.io/img/yao.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/kyrie.github.io/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/kyrie.github.io/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/kyrie.github.io/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/kyrie.github.io/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/kyrie.github.io/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1603983162805&amp;di=798b3efe9ebf02972fc23ab48813e529&amp;imgtype=0&amp;src=http%3A%2F%2Fww3.sinaimg.cn%2Flarge%2Fa626fafagw1etqnhowylfj21kw0zknfs.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/kyrie.github.io/">kyrieIrving</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/kyrie.github.io/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/kyrie.github.io/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/kyrie.github.io/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/kyrie.github.io/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">kyrieIrving</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/kyrie.github.io/1226449275@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.baidu.com" target="_blank" title="ICon"><i class="fas fa-anchor"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/kyrie.github.io/2020/11/25/AJAX%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="无题">     <img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/kyrie.github.io/img/404.jpg'" alt="无题"></a></div><div class="recent-post-info"><a class="article-title" href="/kyrie.github.io/2020/11/25/AJAX%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-11-25T02:41:36.491Z" title="发表于 2020-11-25 10:41:36">2020-11-25</time></span></div><div class="content">AJAX的基础知识
+全局刷新和局部刷新
+全局刷新：整个浏览器被新的数据覆盖。 在网络中传输大量的数据。 浏览器需要加载，渲染页面。
+局部刷新：在浏览器器的内部，发起请求，获取数据，改变页面中的部分内容。其余的页面无需加载和渲染。 网络中数据传输量少， 给用户的感受好。
+
+
+AJAX的作用
+ajax是用来做局部刷新的。局部刷新使用的核心对象是 异步对象（XMLHttpRequest） 这个异步对象是存在浏览器内存中的 ，使用javascript语法创建和使用XMLHttpRequest对象。
+
+
+ajax：Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）
+Asynchronous:异步的意思
+JavaScript:javascript脚本，在浏览器中执行
+XML:一种数据格式
+
+
+ajax是一种做局部刷新的新方法（2003左右），不是一种语言。 ajax包含的技术主要有javascript, dom,css, xml等等。 核心是javascript 和 xml 。 javascript：负责创建异步对象， 发送请求， 更新页面的 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/kyrie.github.io/2020/11/18/JSP%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" title="无题">     <img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/kyrie.github.io/img/404.jpg'" alt="无题"></a></div><div class="recent-post-info"><a class="article-title" href="/kyrie.github.io/2020/11/18/JSP%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-11-18T05:17:23.947Z" title="发表于 2020-11-18 13:17:23">2020-11-18</time></span></div><div class="content">JSP相关内容1.为什么学习JSP学习JSP是javaServer pages 是为了做动态网页。在一个servlet中频繁的输出HTML代码，使得程序的耦合度提高了
+违背了OCP(开发-封闭原则)开发原则。学习JSP在一定程度上也是为了降低程序的耦合度，JSP是javaEE规范之一
+
+JSP文件的存放位置？
+
+jsp可以放到WEB-INF目录外，目前我们是这样做的
+在实际开发中，有很多项目是将JSP放到WEB-INF目录中，为了保护JSP
+WEB-INF目录的数据是相对安全的
+
+
+jsp文件后缀？
+
+默认是.jsp
+但是jsp文件的后缀也可以修改的，通过修改Tomcat的CATALINA_HOME/conf/web.xml文件
+默认是.jsp和.jspx文件后缀
+
+
+js和jsp的区别?
+
+js:JavaScript，运行在浏览器中，和服务器没有关系
+jsp:JavaServer Pages,运行在服务器中，JSP底层就是java程序，运行在JVM中。
+
+
+JSP的执行原理？
+
+浏览器上访问的路径虽然是以.jsp文件结尾，访问的是某个jsp文件，实际上底层访问的是jsp对应的java ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/kyrie.github.io/2020/11/09/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="无题">     <img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/kyrie.github.io/img/404.jpg'" alt="无题"></a></div><div class="recent-post-info"><a class="article-title" href="/kyrie.github.io/2020/11/09/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-11-09T14:30:41.066Z" title="发表于 2020-11-09 22:30:41">2020-11-09</time></span></div><div class="content">
+title： Linux相关内容#Linux基础知识
+Linux的目录结构
+Linux只有一个根目录 /
+
+Linux的世界中，一切都是文件
+
+层级的目录结构：
+
+
+ root : 该目录为系统管理员目录，root是具有超级权限的用户。
+
+2)  bin -&gt;usr/bin : 存放系统预装的可执行程序，这里存放的可执行文件可以在系统的任何目录下执行。
+
+ usr是linux的系统资源目录，里边存放的都是一些系统可执行文件或者系统以来的一些文件库。
+
+4)  usr/local/bin：存放用户自己的可执行文件，同样这里存放的可执行文件可以在系统的任何目录下执行。
+
+ lib-&gt;usr/lib: 这个目录存放着系统最基本的动态连接共享库，其作用类似于Windows里的DLL文件，几乎所有的应用程序都需要用到这些共享库。
+
+ boot : 这个目录存放启动Linux时使用的一些核心文件，包括一些连接文件以及镜像文件。
+
+ dev: dev是Device(设备)的缩写, 该目录下存放的是Linux的外部设备，Linux中的设备也是以文件的形式存在。
+
+
+8)  etc: 这个 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/kyrie.github.io/2020/11/08/python0%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" title="Python基础">     <img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/kyrie.github.io/img/404.jpg'" alt="Python基础"></a></div><div class="recent-post-info"><a class="article-title" href="/kyrie.github.io/2020/11/08/python0%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" title="Python基础">Python基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-11-08T09:28:53.704Z" title="发表于 2020-11-08 17:28:53">2020-11-08</time></span></div><div class="content">python0基础学习pycharm的相关快捷方式
+ctrl+alt+l 用于调整代码的相关规范
+ctrl + 鼠标左键 ：用于查看相关函数的具体实现
+ctrl+shift+F10：运行当前程序
+
+python的注释方式
+python中的注释方式：多行注释:’’’  ‘’’   “””    “””    单行注释：#
+
+python变量
+定义变量的三种方式：
+变量名 = 值
+变量名，变量名=值1，值2
+变量1=变量2=值
+
+
+一个变量只能引用一个数值
+命名规范
+数字字母下划线
+见名知意
+驼峰标识
+非关键字
+区分大小写
+
+
+变量在使用之前一定要赋值
+
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/kyrie.github.io/2020/11/05/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" title="Java基础知识">     <img class="post_bg" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1603983928098&amp;di=79fabf49d6e8ab3cc8a4013e35915e5c&amp;imgtype=0&amp;src=http%3A%2F%2Fc2.hoopchina.com.cn%2Fuploads%2Fstar%2Fevent%2Fimages%2F200105%2Fab31082ad6c8121fba58220ea18cdb4f003242ef.jpg" onerror="this.onerror=null;this.src='/kyrie.github.io/img/404.jpg'" alt="Java基础知识"></a></div><div class="recent-post-info"><a class="article-title" href="/kyrie.github.io/2020/11/05/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" title="Java基础知识">Java基础知识</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-11-05T07:28:32.148Z" title="发表于 2020-11-05 15:28:32">2020-11-05</time></span></div><div class="content">Java 基础知识总结环境搭建问题
+一个 java 文件中可以出现定义多个 class
+public 类不是必须的可以没有
+在源文件中定义一个 class 必定会对应生成一个 class
+public 的类可以没有，但如果有的话，public 修饰的类名必须和源文件名保持一致。
+public 的类有也只能有 1 个。
+一个 java 文件中可以没有 public 类，当程序有多个类且有 main 方法时，加载谁的.class 文件，谁就执行
+
+常用的组合键方式
+复制 ctrl + c
+粘贴 ctrl + v
+剪切 ctrl + x
+保存 ctrl + s
+撤销 ctrl + z
+重做 ctrl + y
+回到行首：home 键
+回到行尾：end 键
+当光标在行尾，怎么选中一行？shift + home 键
+当光标在行首，怎么选中一行？shift + end 键
+回到文件头：ctrl + home
+回到文件尾：ctrl + end
+在 idea 中添加方法注释/** 然后 Enter 键
+
+标识符和关键字什么是标识符
+标识符只能由数字、字母（包括中文）、下划线_、美元符号$组成，
+不能含有 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/kyrie.github.io/2020/10/31/hello/" title="Servlet相关知识">     <img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/kyrie.github.io/img/404.jpg'" alt="Servlet相关知识"></a></div><div class="recent-post-info"><a class="article-title" href="/kyrie.github.io/2020/10/31/hello/" title="Servlet相关知识">Servlet相关知识</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-31T08:46:12.437Z" title="发表于 2020-10-31 16:46:12">2020-10-31</time></span></div><div class="content">前期工作Tomcat7 安装与配置
+将下载的压缩包解压到你指定的目录即可，如我的
+Tomcat 启动与关闭启动在
+前期工作Tomcat7 安装与配置Tomcat 安装
+将下载的压缩包解压到你指定的目录即可，如我的
+
+Tomcat 启动与关闭启动在命令行窗口进入 Tomcat 的根目录下的 bin 目录
+执行 startup.bat 即可启动 Tomcat
+
+关闭同样在命令行下执行 shutdown.bat 文件即可
+
+注意，请不雅关闭启动 Tomcat 后出现的黑窗口，这样会强制关闭 Tomcat 服务器
+命令行窗口乱码启动 Tomcat 后，会出现乱码
+
+进入 Tomcat7 根目录下的 conf 目录，打开 logging.properties 文件
+找到java.util.logging.ConsoleHandler.encoding = UTF-8
+在此行前使用#将其注释掉即可
+Tomcat 配置配置 bin 目录配置 bin 目录，以使启动和关闭 Tomcat 命令一起其他命令可以在不进入 Tomcat 下的 bin 目录即可使用
+在用户变量的 Path 变量里面添加一条即可 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/kyrie.github.io/2020/10/29/Makedown%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99/" title="Markdown文件的相关语法">     <img class="post_bg" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1603983928098&amp;di=79fabf49d6e8ab3cc8a4013e35915e5c&amp;imgtype=0&amp;src=http%3A%2F%2Fc2.hoopchina.com.cn%2Fuploads%2Fstar%2Fevent%2Fimages%2F200105%2Fab31082ad6c8121fba58220ea18cdb4f003242ef.jpg" onerror="this.onerror=null;this.src='/kyrie.github.io/img/404.jpg'" alt="Markdown文件的相关语法"></a></div><div class="recent-post-info"><a class="article-title" href="/kyrie.github.io/2020/10/29/Makedown%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99/" title="Markdown文件的相关语法">Markdown文件的相关语法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-28T16:00:00.000Z" title="发表于 2020-10-29 00:00:00">2020-10-29</time></span></div><div class="content">Makedown 文件的相关语法如何添加多级标题在md文件中可以使用#号表示1-6级标题，一级标题对应一个#号，二级标题对应两个#号
+
+段落格式Markdown 段落没有特殊的格式，直接编写文字就好，段落的换行是使用两个以上空格加上回车。Markdown可以使用以下几种字体
+*斜体文本*
+_斜体文本_
+**粗体文本**
+__粗体文本__
+***粗斜体文本***
+___粗斜体文本___
+
+添加分隔线的几种方式你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号—
+或是减号中间插入空格。下面每种写法都可以建立分隔线：
+***
+* * *
+*****
+- - -
+--------
+添加下划线&lt;u&gt;asdfasfasdfsdf&lt;/u&gt;
+Makedown 列表无序列表通过*,+,-作为列表标记，这些标记后面都需要添加一个空格，然后在填写内容
+有序列表使用数字加上.号来表示，如
+1. 第一项
+2. 第二项
+3. 第三项
+
+列表嵌套列表嵌套只需在子列表中的选项前面添加四个空格即可:
+    1. 第一项：
+        - 第一项嵌 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/kyrie.github.io/img/yao.png" onerror="this.onerror=null;this.src='/kyrie.github.io/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">敲代码的小帅帅</div><div class="author-info__description">永远不停的在敲代码</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/kyrie.github.io/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/asdfdasdfasf/kyrie.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/kyrie.github.io/1226449275@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.baidu.com" target="_blank" title="ICon"><i class="fas fa-anchor"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">今天不努力，明天变废物，大家也要加油哟！</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/kyrie.github.io/2020/11/25/AJAX%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="无题"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/kyrie.github.io/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/kyrie.github.io/2020/11/25/AJAX%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="无题">无题</a><time datetime="2020-11-25T02:41:36.491Z" title="发表于 2020-11-25 10:41:36">2020-11-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/kyrie.github.io/2020/11/18/JSP%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" title="无题"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/kyrie.github.io/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/kyrie.github.io/2020/11/18/JSP%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" title="无题">无题</a><time datetime="2020-11-18T05:17:23.947Z" title="发表于 2020-11-18 13:17:23">2020-11-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/kyrie.github.io/2020/11/09/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="无题"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/kyrie.github.io/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/kyrie.github.io/2020/11/09/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="无题">无题</a><time datetime="2020-11-09T14:30:41.066Z" title="发表于 2020-11-09 22:30:41">2020-11-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/kyrie.github.io/2020/11/08/python0%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" title="Python基础"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/kyrie.github.io/img/404.jpg'" alt="Python基础"/></a><div class="content"><a class="title" href="/kyrie.github.io/2020/11/08/python0%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" title="Python基础">Python基础</a><time datetime="2020-11-08T09:28:53.704Z" title="发表于 2020-11-08 17:28:53">2020-11-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/kyrie.github.io/2020/11/05/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" title="Java基础知识"><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1603983928098&amp;di=79fabf49d6e8ab3cc8a4013e35915e5c&amp;imgtype=0&amp;src=http%3A%2F%2Fc2.hoopchina.com.cn%2Fuploads%2Fstar%2Fevent%2Fimages%2F200105%2Fab31082ad6c8121fba58220ea18cdb4f003242ef.jpg" onerror="this.onerror=null;this.src='/kyrie.github.io/img/404.jpg'" alt="Java基础知识"/></a><div class="content"><a class="title" href="/kyrie.github.io/2020/11/05/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" title="Java基础知识">Java基础知识</a><time datetime="2020-11-05T07:28:32.148Z" title="发表于 2020-11-05 15:28:32">2020-11-05</time></div></div></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/kyrie.github.io/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/kyrie.github.io/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">2</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">7</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-10-29T11:37:56.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-01-20T12:25:15.525Z"></div></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1603983162805&amp;di=798b3efe9ebf02972fc23ab48813e529&amp;imgtype=0&amp;src=http%3A%2F%2Fww3.sinaimg.cn%2Flarge%2Fa626fafagw1etqnhowylfj21kw0zknfs.jpg)"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By 敲代码的小帅帅</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi，welcome to my <a target="_blank" rel="noopener" href="https://asdfdasdfasf.github.io/kyrie.github.io/">Blog</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/kyrie.github.io/js/utils.js"></script><script src="/kyrie.github.io/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "今日事&#44;今日毕,Never put off till tomorrow what you can do today".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '今日事&#44;今日毕'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" async="async" mobile="true"></script></div><script>'use strict';'serviceWorker'in navigator&&navigator.serviceWorker.register('service-worker.js').then(function(a){a.onupdatefound=function(){var b=a.installing;b.onstatechange=function(){switch(b.state){case'installed':navigator.serviceWorker.controller?console.log('New or updated content is available.'):console.log('Content is now available offline!');break;case'redundant':console.error('The installing service worker became redundant.');}}}}).catch(function(a){console.error('Error during service worker registration:',a)});
+</script></body></html>

@@ -1,0 +1,591 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>kyrieIrving | kyrieIrving</title><meta name="author" content="敲代码的小帅帅"><meta name="copyright" content="敲代码的小帅帅"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="title： Linux相关内容#Linux基础知识 Linux的目录结构 Linux只有一个根目录 &#x2F;  Linux的世界中，一切都是文件  层级的目录结构：    root : 该目录为系统管理员目录，root是具有超级权限的用户。  2)  bin -&gt;usr&#x2F;bin : 存放系统预装的可执行程序，这里存放的可执行文件可以在系统的任何目录下执行。   usr是linux的系统资源目录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kyrieIrving">
+<meta property="og:url" content="http://example.com/2020/11/09/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="kyrieIrving">
+<meta property="og:description" content="title： Linux相关内容#Linux基础知识 Linux的目录结构 Linux只有一个根目录 &#x2F;  Linux的世界中，一切都是文件  层级的目录结构：    root : 该目录为系统管理员目录，root是具有超级权限的用户。  2)  bin -&gt;usr&#x2F;bin : 存放系统预装的可执行程序，这里存放的可执行文件可以在系统的任何目录下执行。   usr是linux的系统资源目录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2020-11-09T14:30:41.066Z">
+<meta property="article:modified_time" content="2020-11-18T05:46:47.874Z">
+<meta property="article:author" content="敲代码的小帅帅">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/kyrie.github.io/img/favicon.png"><link rel="canonical" href="http://example.com/2020/11/09/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="yandex-verification" content="{&quot;theme_color&quot;:{&quot;enable&quot;:true,&quot;main&quot;:&quot;#49B1F5&quot;,&quot;paginator&quot;:&quot;#00c4b6&quot;,&quot;button_hover&quot;:&quot;#FF7242&quot;,&quot;text_selection&quot;:&quot;#00c4b6&quot;,&quot;link_color&quot;:&quot;#99a9bf&quot;,&quot;meta_color&quot;:&quot;#858585&quot;,&quot;hr_color&quot;:&quot;#A4D8FA&quot;,&quot;code_foreground&quot;:&quot;#F47466&quot;,&quot;code_background&quot;:&quot;rgba(27, 31, 35, .05)&quot;,&quot;toc_color&quot;:&quot;#00c4b6&quot;,&quot;blockquote_padding_color&quot;:&quot;#49b1f5&quot;,&quot;blockquote_background_color&quot;:&quot;#49b1f5&quot;}}"/><link rel="manifest" href="/kyrie.github.io/image/pwa/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/kyrie.github.io/image/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/kyrie.github.io/image/pwa/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/kyrie.github.io/image/pwa/16.png"/><link rel="mask-icon" href="/kyrie.github.io/image/pwa/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/kyrie.github.io/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/kyrie.github.io/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 敲代码的小帅帅","link":"链接: ","source":"来源: kyrieIrving","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: {"text":"凯里,欧文,最棒","fontSize":"15px"},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-11-18 13:46:47'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/kyrie.github.io/img/yao.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/kyrie.github.io/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/kyrie.github.io/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/kyrie.github.io/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/kyrie.github.io/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/kyrie.github.io/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/kyrie.github.io/">kyrieIrving</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/kyrie.github.io/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/kyrie.github.io/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/kyrie.github.io/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/kyrie.github.io/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/kyrie.github.io/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-09T14:30:41.066Z" title="发表于 2020-11-09 22:30:41">2020-11-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-18T05:46:47.874Z" title="更新于 2020-11-18 13:46:47">2020-11-18</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h2 id="title：-Linux相关内容"><a href="#title：-Linux相关内容" class="headerlink" title="title： Linux相关内容"></a>title： Linux相关内容</h2><p>#Linux基础知识</p>
+<h2 id="Linux的目录结构"><a href="#Linux的目录结构" class="headerlink" title="Linux的目录结构"></a>Linux的目录结构</h2><ul>
+<li><p>Linux只有一个根目录 /</p>
+</li>
+<li><p>Linux的世界中，一切都是文件</p>
+</li>
+<li><p>层级的目录结构：</p>
+<p><img src="https://i.loli.net/2020/11/09/duptJ3YxgUsQh6G.png" alt="Snipaste_2020-11-09_22-18-20.png"></p>
+<ol>
+<li> root : 该目录为系统管理员目录，root是具有超级权限的用户。</li>
+</ol>
+<p><strong>2)  bin -&gt;usr/bin : 存放系统预装的可执行程序，这里存放的可执行文件可以在系统的任何目录下执行。</strong></p>
+<ol start="3">
+<li> usr是linux的系统资源目录，里边存放的都是一些系统可执行文件或者系统以来的一些文件库。</li>
+</ol>
+<p><strong>4)  usr/local/bin：存放用户自己的可执行文件，同样这里存放的可执行文件可以在系统的任何目录下执行。</strong></p>
+<ol start="5">
+<li><p> lib-&gt;usr/lib: 这个目录存放着系统最基本的动态连接共享库，其作用类似于Windows里的DLL文件，几乎所有的应用程序都需要用到这些共享库。</p>
+</li>
+<li><p> boot : 这个目录存放启动Linux时使用的一些核心文件，包括一些连接文件以及镜像文件。</p>
+</li>
+<li><p> dev: dev是Device(设备)的缩写, 该目录下存放的是Linux的外部设备，Linux中的设备也是以文件的形式存在。</p>
+</li>
+</ol>
+<p><strong>8)  etc: 这个目录存放所有的系统管理所需要的配置文件</strong>。</p>
+<p><strong>9)  home：用户的主目录，在Linux中，每个用户都有一个自己的目录，一般该目录名以用户的账号命名，叫作用户的根目录；用户登录以后，默认打开自己的根目录。</strong></p>
+<ol start="10">
+<li><p>var : 这个目录存放着在不断扩充着的东西，我们习惯将那些经常被修改的文件存放在该目录下，比如运行的各种日志文件。</p>
+</li>
+<li><p>mnt : 系统提供该目录是为了让用户临时挂载别的文件系统，我们可以将光驱挂载在/mnt/上，然后进入该目录就可以查看光驱里的内容</p>
+</li>
+</ol>
+<p><strong>12)  opt: 这是给linux额外安装软件所存放的目录。比如你安装一个Oracle数据库则就可以放到这个目录下，默认为空。</strong></p>
+<ol start="13">
+<li> tmp: 这个目录是用来存放一些临时文件的。</li>
+</ol>
+<h2 id="Linux的远程操作"><a href="#Linux的远程操作" class="headerlink" title="Linux的远程操作"></a>Linux的远程操作</h2><p>1)、Xshell：linux的终端模拟软件。（解决了远程使用终端的问题）</p>
+<pre><code>    安装并破解：解压、破解(运行两个.bat文件)、启动(Xshell)
+连接远程linux系统：创建会话：
+            查看linux系统的ip地址：ifconfig</code></pre>
+<p>2)、Xftp：文件传输软件。（解决了linux和本机文件的相互传输）</p>
+<pre><code>    安装并破解：解压、破解(运行两个.bat文件)、启动(Xftp)
+连接远程linux系统：创建会话：
+            查看linux系统的ip地址：ifconfig</code></pre>
+<h2 id="vim和vi的相关操作"><a href="#vim和vi的相关操作" class="headerlink" title="vim和vi的相关操作"></a>vim和vi的相关操作</h2><ol>
+<li>vi和vim是linux的中文编辑器，用来在linux中创建，查看或者编辑文本文件，就好像windows中的记事本一样。vim是vi的增强版本，vi的绝大多数用法在vim都适用。</li>
+<li>vi和vim的使用<ol>
+<li><strong>一般模式</strong>：用vi或者vim命令打开文件(vim test.txt)，进入一般模式，可以查看文件的内容，并且通过上下左右键移动光标，查看文件的某一部分；但是不能编辑文件</li>
+<li><strong>编辑模式：</strong>在一般模式下，按i或者a键进入编辑模式，在编辑模式中可以编辑文件内容，但是不能保存编辑的内容，按Esc，回到一般模式</li>
+<li><strong>命令行模式</strong>: 在一般模式下，按shift+：进入命令行模式<ol>
+<li>q!———不保存强制退出编辑器</li>
+<li>wq———保存并且退出编辑器</li>
+<li>q————只是退出编辑器</li>
+</ol>
+</li>
+<li><strong>vi和vim编辑器的快捷键</strong><ol>
+<li>复制当前行：在一般模式下按yy，把光标所在行复制到剪切板，按p将内容粘贴到光标所在的下一行</li>
+<li>复制多行：在一般模式下，按5yy，将光标所在行往下5行复制到剪切板，按p，把剪切板中的内容粘贴到光标所在的下一行</li>
+<li>在文本文件中查找关键字：在命令行模式下熟输入 <code>/关键字</code>，回车，按n表示光标查找下一个关键字</li>
+<li>删除光标所在的当前行：在一般模式下按dd，删除光标所在的当前行</li>
+<li>删除光标所在的行往下5行：在一般模式下，按5dd</li>
+<li>撤销上次编辑的内容：在一般模式下，按u</li>
+<li>显示行号：命令行模式下，设置文件的行号，取消文件的行号.[命令行下<code>(: set nu) 和(:set nonu)]</code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="Linux中的用户管理"><a href="#Linux中的用户管理" class="headerlink" title="Linux中的用户管理"></a>Linux中的用户管理</h2><ol>
+<li><p>任何使用linux的系统资源的用户，必须使用一个合法的账号和密码，账号和密码一般都是向系统管理员申请。<br> root是linux系统安装时默认创建的系统管理员账号，由root创建普通账号。</p>
+</li>
+<li><p>添加用户：useradd 【选项】用户名</p>
+<ol>
+<li><p>useradd kyrie</p>
+</li>
+<li><p>在/home目录下创建用户的根目录，目录名默认和用户名相同</p>
+</li>
+<li><p>在linux中任何一个用户都至少属于一个组，新建用户时如果不指定组，则会新建一个组，组名和用户名相同，并且把该用户添加到该组中</p>
+</li>
+<li><p>useradd -d /home/ww wangwu  创建wangwu用户的同时，指定用户的根目录</p>
+</li>
+<li><p>给用户设置密码：password 用户名</p>
+<ol>
+<li>password kyrie</li>
+</ol>
+</li>
+<li><p>删除用户：userdel 用户名（只删除了用户，没有删除他的主目录 ）</p>
+<ol>
+<li>userdel kyrie ：删除用户，保留了朱目录</li>
+<li>userdel -r kyrie ：删除用户的同时删除了它的主目录</li>
+</ol>
+</li>
+<li><p>查看用户信息：id 用户名</p>
+<ol>
+<li>id kyrie</li>
+</ol>
+</li>
+<li><p>切换用户名：su 用户名</p>
+<ol>
+<li>su kyrie</li>
+<li>从权限高的用户切换权限低的用户，不需要密码验证；</li>
+<li>从权限低的用户切换到权限高的用户，必须密码验证。</li>
+</ol>
+</li>
+</ol>
+<h2 id="Linux中的组管理"><a href="#Linux中的组管理" class="headerlink" title="Linux中的组管理"></a>Linux中的组管理</h2><ol>
+<li>linux中的组相当于角色的概念，可以对有共性的用户进行统一管理</li>
+<li>每一个用户至少属于一个组，不能独立于组的存在，也可以属于多个组<ol>
+<li>新建用户时如果不指定组，则会新建一个组，组名跟用户名相同，并且把该用户添加到该组中。</li>
+</ol>
+</li>
+<li>添加组 groupadd 组名</li>
+<li>删除组 groupdel 组名</li>
+<li>把用户添加到组中 gpasswd -a 用户名 组名<ol>
+<li>gpassword -a zhangsan dev 将zhangsan添加到了dev这个组当中</li>
+</ol>
+</li>
+<li>把用户从组中移除：gpasswd -d 用户名 组名<ol>
+<li> gpasswd -d zhangsan dev</li>
+</ol>
+</li>
+<li>添加用户时，指定所属的组(主组)：useradd -g 组名 用户名<ol>
+<li>useradd -g dev lisi</li>
+</ol>
+</li>
+</ol>
+<h2 id="Linux中的系统操作命令"><a href="#Linux中的系统操作命令" class="headerlink" title="Linux中的系统操作命令"></a>Linux中的系统操作命令</h2><ol>
+<li>关机：shutdown now 立即关机<ol>
+<li>shutdown -h xxx 定时关机</li>
+<li>shutdown -r now 立即重启</li>
+</ol>
+</li>
+<li>重启:reboot 立即重启</li>
+<li>同步数据库：sync</li>
+</ol>
+<h2 id="Linux中的帮助命令"><a href="#Linux中的帮助命令" class="headerlink" title="Linux中的帮助命令"></a>Linux中的帮助命令</h2><ol>
+<li>用来查看linux系统手册上的帮助信息：man 命令<pre><code>   man ls
+   分屏显示、按回车翻一行、按空格翻一页、按q退出查看</code></pre>
+</li>
+<li>用来查看命名的内置帮助信息：help 命令<pre><code>   help cd</code></pre>
+</li>
+<li>查看当前所在的目录：pwd(从根到目前路径)<ol>
+<li>查看指定目录下所有的子目录和文件列表 ls 【选项】 【指定目录】</li>
+<li>ls /home<ol>
+<li>ls -l /home ：以列表形式显示<br>  ls -a /home：显示指定目录下所有的子目录和文件(包括虚拟的目录)<br>  ls -al /home:以列表形式显示指定目录下所有的子目录和文件(包括虚拟的目录)</li>
+</ol>
+</li>
+<li>切换目录 cd 目录名<ol>
+<li>绝对目录：以盘符开始的目录叫绝对目录，从盘符开始查找目标目录  cd /opt/testDir</li>
+<li>~：当前用户的根目录。在任何目录下执行:cd ~，进入当前用户的根目录。 </li>
+<li>相对目录：以目录名开始的目录叫相对目录，从当前目录开始查找目标目录</li>
+<li>  ..:当前目录的上一级目录，从的当前目录开始查找它的上一级目录。</li>
+<li>.:当前目录     xxx.sh ====》 ./xxx.sh</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>创建目录：mkdir 【选项】目录名<ol>
+<li>绝对目录：mkdir /opt/testDir/test1 //在/opt/testDir目录下创建一个目录test1(使用绝对目录)</li>
+<li>相对目录：mkdir test2 //在/opt/testDir目录下创建一个目录test2(使用相对目录)</li>
+<li>递归创建目录：mkdir -p /opt/testDir/test3/test4   在/opt/testDir目录下创建目录test3，并且在test3下创建test4(一次创建多级目录)</li>
+</ol>
+</li>
+<li>删除一个空目录：rmdir 目录名</li>
+<li>创建一个或者多个空文件：touch 文件名列表(文件名之间用空格隔开)<ol>
+<li>touch t1.txt</li>
+<li>touch t2.txt t3.txt t4.txt</li>
+</ol>
+</li>
+<li>复制文件或者目录： cp 【选项】source （源）dest（目标）<ol>
+<li>cp t1.txt test2   把t1.txt复制到了test2这个文件夹中</li>
+<li>cp -r test2 test5  把test2目录复制到test5目录中(递归地复制目录)</li>
+</ol>
+</li>
+<li>删除文件或者目录：rm 文件名或者目录名<ol>
+<li>  rm t1.txt  提示删除文件</li>
+<li>rm -f t2.txt  强制删除文件</li>
+<li>rm -r test2  提示递归删除目录</li>
+<li>rm -rf test5  强制递归删除目录</li>
+</ol>
+</li>
+<li>移动目录或者文件：mv source(源) dest(目标)<ol>
+<li>mv test.txt test1 将test.txt 移动到test1这个文件夹中</li>
+<li>mv test1 test2  将test1文件夹移动到test2文件夹中</li>
+<li>mv t3.txt t3_new.txt  文件重命名<pre><code>***如果目标中已经存在该文件或者目录，则会提示是否覆盖。**</code></pre>
+</li>
+</ol>
+</li>
+<li>查看文件内容：cat 文件名<ol>
+<li>cat -n 文件名 ：显示行号</li>
+</ol>
+</li>
+<li>分页查看文件文件内容：more 文件名  一次性加载文件所有内容到内存，分页显示<br>按回车翻一行、按空格翻一页<br>more t4.txt</li>
+<li>分页查看文件文件内容：less 文件名 分页加载文件所有内容到内存，分页显示less t4.txt<br>按回车翻一行、按空格翻一页，按q退出查看</li>
+<li>查看文件的头10行：head [选项] 文件名<br>   head t4.txt<br>   head -n 5 t4.txt</li>
+<li>查看文件的后10行：tail [选项] 文件名<br> tail t4.txt<br> tail -n 5 t4.txt</li>
+</ol>
+<h2 id="linux中文件和目录的操作命令"><a href="#linux中文件和目录的操作命令" class="headerlink" title="linux中文件和目录的操作命令"></a>linux中文件和目录的操作命令</h2><ol>
+<li><p>echo：输出系统变量或者常量的值到命令行终端。</p>
+<ol>
+<li>echo $JAVA_HOME<br>  echo $PATH  echo hello</li>
+</ol>
+</li>
+<li><p>将前一个查看命令的结果输出到到指定的文件中：查看命令 &gt; 文件名</p>
+<ol>
+<li>如果目标文件不存在,则新建一个文件</li>
+<li> *如果目标文件已存在，则把文件以前的内容覆盖</li>
+<li>ls &gt;ret.txt     ls -al &gt; ret.txt    cat ret.txt &gt; t3_new.txt 文件内容的复制</li>
+</ol>
+</li>
+<li><p>把前一个查看命令的结果追加输出到指定的文件中：查看命令 &gt;&gt; 文件名</p>
+<ol>
+<li>如果目标文件不存在,则新建一个文件<pre><code>*如果目标文件已存在，则在文件原来内容的基础上进行追加</code></pre>
+</li>
+<li>ls &gt; ret.txt<br>ls -al &gt;&gt; ret.txt<br>cat t4.txt &gt;&gt; ret.txt</li>
+</ol>
+<h4 id="linux中关于日期和时间的操作命令："><a href="#linux中关于日期和时间的操作命令：" class="headerlink" title="linux中关于日期和时间的操作命令："></a>linux中关于日期和时间的操作命令：</h4><ol>
+<li>查看或者设置系统的日期和时间：date</li>
+<li>date 查看系统当前的完整的日期和时间<br> date +%Y  系统当前的年份<br> date +%m  系统当前的月份<br> date +%d  系统当前的日期</li>
+<li>date ‘+%Y-%m-%d %H:%M:%S’ 按yyyy-MM-dd HH:mm:ss格式显示</li>
+<li>date -S ‘2020-10-20 10:20:30’ 设置当前的系统时间</li>
+<li>查看系统日历：cal<pre><code>  cal：查看当前月份的日历
+  cal 2020：查看指定年份的日历</code></pre>
+</li>
+</ol>
+<h4 id="linux中关于搜索文件或者目录的命令"><a href="#linux中关于搜索文件或者目录的命令" class="headerlink" title="linux中关于搜索文件或者目录的命令"></a>linux中关于搜索文件或者目录的命令</h4><ol>
+<li>find  [搜索范围] [搜索标准]   关键字<ol>
+<li>-name：默认按名称搜索(文件或者目录所在的路径也在搜索范围之内)</li>
+<li>-size：按文件大小搜索</li>
+<li>-user：按文件的所有者搜索</li>
+</ol>
+</li>
+<li> find *.txt  搜索当前目录下，所有的.txt文件</li>
+<li> find <em>e</em>  搜索当前目录下，所有名称中包含e的那些文件或者目录</li>
+<li> find /etc *.txt  搜索/etc目录下所有.txt文件</li>
+<li>find /etc -size -5k  搜索/etc目录下所有小于5k的文件</li>
+<li> find /etc -user zhangsan  搜索/etc目录下所有的所有者是zhangsan的文件和目录</li>
+<li>locate:在整棵目录树中搜索文件或者目录，都是根据名称搜索，效率高。</li>
+<li>搜索过滤命令，在前一个搜索命令的结果中进行按名称进一步过滤：搜索命令 |grep [选项] 过滤条件<br>查看命令 |grep [选项] 过滤条件<ol>
+<li>find *.txt|grep new  搜索当前目录下，所有名称包含new的.txt文件</li>
+<li> find /etc -size -5k|grep firefox</li>
+<li>cat t1.txt|grep beijing         cat t1.txt|grep -ni beijing     ls -al|grep new</li>
+</ol>
+</li>
+</ol>
+<h4 id="linux中有关压缩和解压的命令"><a href="#linux中有关压缩和解压的命令" class="headerlink" title="linux中有关压缩和解压的命令"></a>linux中有关压缩和解压的命令</h4><ol>
+<li><strong>压缩或者解压单个文件：gzip 文件名：压缩单个文件，生成一个.gz的压缩包，并且会把原来的文件删除。</strong></li>
+<li> <strong>gunzip .gz压缩包名:解压.gz压缩包，并且会把原来的.gz压缩包删除。</strong></li>
+<li> gzip ret.txt</li>
+<li>gunzip ret.txt.gz</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<pre><code>  1. **压缩(打包)或者解压多个文件和目录：zip 目标压缩包名称(通常使用.zip压缩包) 文件或者目录列表**：
+  2. **unzip 压缩包名(.zip) -d 解压目录名：将指定的.zip压缩包解压到当前目录(或者指定目录)。**
+  3. zip test.zip ret.txt t1.txt test2    将后面的三个文件变成一个压缩包，名字叫做test.zip
+  4.   unzip test.zip -d test3       将test.zip解压变成一个叫test3的文件夹
+  5.   zip mytest.zip test.zip t3_new.txt t4.txt test2   将test.zip 和t3_new.txt 和t4.txt 和test2压缩成一个mytest.zip
+
+
+
+  1. **压缩(打包)或者解压多个文件和目录：tar [选项] 目标压缩包名称(xxx.tar.gz) 文件或者目录列表**
+     1. c：打包或者压缩
+     2.   tar [选项] 压缩包名(xxx.tar.gz) -C 解压目录名：将指定的.tar.gz压缩包解压到当期目录(或者指定目录)
+     3.  tar -zcvf xxx.tar.gz 文件或者目录列表
+         tar -zxvf xxx.tar.gz -C 解压目录名
+     4. tar -zcvf mytar.tar.gz mytest.zip ret.txt t1.txt test2   打包
+        tar -zxvf mytar.tar.gz -C /opt/testDir/test5   解压
+
+  #### 文件或者目录与组
+
+  1. 文件或者目录与组基本介绍: 在linux中,每一个用户都至少属于一个组，用户不能独立于组存在，一个用户可以属于多个组。
+  2.  在linux中，每一个文件或者目录也必须属于一个组，而且只能属于一个组，默认情况下，文件所有者所属的主组就是文件所属的组；文件或者目录通过组来控制哪些用户可以对它进行哪些操作，即文件或者目录的访问权限;
+  3.  在文件或者目录看来，linux系统中所有的用户分为三类：
+              所有者：默认情况下，文件或者目录的所有者都是创建者，可以修改
+              同组用户：跟文件或者目录属于同一个组的用户
+              其它组用户：既不是文件或者目录的所有者，也不是同组用户
+  4. 修改文件或者目录的所有者：chown 新的所有者 文件名或者目录名     
+     1. chown 新的所有者:新的组 文件名或者目录名
+     2.  chown zhangsan t1.txt
+         chown -R zhangsan test3 递归的改变test3目录下面所有文件的所有者
+         chown zhangsan:dev t4.txt    修改t4.txt的所有则为zhangsan以及组为dev
+     3. chown -R zhangsan:dev test2 递归修改目录的所有者和所在的组 
+  5. 修改文件或者目录的所在组：chgrp 新的组 文件名或者目录名
+     1.  chgrp dev t2.txt
+     2. chgrp -R dev test3
+
+  ## Linux中文件或者目录的权限管理
+
+  1. ​    一个用户至少属于一个组，也可以属于多个组；
+     ​    一个文件或者目录也必须属于一个，并且只能属于一个组；
+     ​    在一个文件或者目录看来，linux系统中所有的用户可以分为三类：
+     ​    所有者：
+     ​    同组用户：
+     ​    其它组用户：
+  2. 文件或者目录的三种权限：在linux中，任何文件或者目录都有三种权限：读(Read)、写(Write)、执行(Execute)
+     1.  对于文件而言:
+                      读：可以读取、查看文件的内容， 比如：cat、more、less、head、tail等。
+                      写：可以修改文件的内容，比如：vi或者vim等
+                      执行：如果该文件是可执行文件(.sh)，可以直接运行，比如：./xxx.sh。
+
+     2. 对于目录而言：
+                   读：可以读取、查看目录下边的内容，比如：ls等
+                            写：可以修改目录中的内容，创建子目录、删除子目录、创建文件、删除文件、重名文件或者目录
+                            执行：可以进入该目录， 比如：cd等。
+
+     3. 文件或者目录的权限控制：  在linux中，任何一个文件或者目录都有三部分权限：所有者权限、同组用户权限、其它组用户权限。
+        1.  第一部分权限：所有者权限，文件或者目录的所有者对该文件所拥有的权限，使用r、w、x分表表示读、写、执行的权限。比如：rwx：拥有读写执行的权限，r-x：拥有读和执行的权限，r--：只拥有读的权限，---：没有任何权限。
+        2. 第二部分权限：同组用户权限，文件或者目录的同组用户对该文件所拥有的权限，使用r、w、x分表表示读、写、执行的权限。
+        3.  第三部分权限：其它组用户权限，文件或者目录的其它组用户对该文件所拥有的权限，使用r、w、x分表表示读、写、执行的权限。
+
+     4. 查看文件或者目录的权限：
+
+        1. ls -aul
+
+     5.  修改文件或者目录的权限
+
+           1.  用 r w x 分别表示所有者，同组用户，其他组用户，所有用户修改权限
+
+           2.   用u、g、o、a分别表示给所有者、同组用户、其它组用户、所有用户修改权限
+
+           3.    用+、-、=分别表示给指定的用户增加、减少、设置对应的权限
+
+                 1.  ```linux
+                       chmod g-w,o+w t5.txt
+                       chmod g=rwx t5.txt
+                       chmod a-r t5.txt
+                     ```
+
+           4.  使用数字的而方式修改文件或者目录的权限：
+
+                 1.  rwx 分别用4 2 1来表示
+                 2.  chmod 777 t5.txt
+
+           #### linux中的进程管理
+
+           1. linux中的进程管理：
+              1. 线程：一个程序的线路
+              2. 进程：一个程序的执行，一个 进程占用一个端口
+              3. 查看正在运行的进程：ps
+                 1. ps  //只会显示应用进程
+                    ps -e //显示所有进程
+                    ps -ef //以全格式的形式显示所有进程
+                    //用于查看linux系统中某一些软件或者应用是否处于启动状态
+                 2. ps -ef|grep mysql
+                 3. 关闭进程：
+                    1. 使用ps命令查看进程的PID
+                    2. 使用命令kill -9 PID
+           2. linux中服务管理：
+              1. 服务介绍：服务是支持Linux运行的一些必要程序，本质上也是进程，叫守护进程。
+              2. 操作服务：systemctl [start|stop|restart|reload|status|enable] 服务名称
+              3. systemctl status firewalld  查看防火墙运行状态
+                     systemctl stop firewalld 关闭防火墙
+                        systemctl start firetalld 开启防火墙
+                        systemctl enable firewalld 设置防火墙开机启动
+
+  ####   linux中软件包的管理：
+
+  1. RPM包管理：
+     RPM：一种LInux的软件包的打包和安装工具，它操作的软件包都是.rpm结尾。
+  2. 使用RPM：rpm命令。
+  3. 查看当前系统中已经安装的rpm软件包：rpm -qa|grep firefox
+  4.    卸载rpm软件包：rpm -e firefox
+        安装rpm包：rpm -ivh xxx.rpm
+  5. YUM包管理：是一种基于RPM的软件包管理工具，它能够从指定服务器上自动下载RPM包并且自动安装，可以自动处理软件包之间的依赖关系。
+  6.  查看当前系统中已经安装的rpm软件包：yum list installed|grep firefox
+     卸载rpm软件包：yum remove firefox.x86_64
+     安装rpm包：yum install firefox</code></pre>
+<h2 id="如何在linux中安装JDK"><a href="#如何在linux中安装JDK" class="headerlink" title="如何在linux中安装JDK"></a>如何在linux中安装JDK</h2><ol>
+<li><p>通过xftp软件将linux版本的安装包上传到  /opt中</p>
+</li>
+<li><p>解压缩到 /opt 目录下面</p>
+<p><img src="https://i.loli.net/2020/11/11/74OtJUuD1KRNbS2.png" alt="解压jdk.png"></p>
+</li>
+<li><p>进入到下面指定的目录配置相关路径<img src="https://i.loli.net/2020/11/11/Ylf3xJ87gMuR4yj.png" alt="进入路径.png"></p>
+</li>
+<li><p>配置以下系数</p>
+</li>
+</ol>
+<p><img src="https://i.loli.net/2020/11/11/K6NSLtbvlM8Q1JT.png" alt="配置文件.png"></p>
+<p>5.让配置文件生效：source /etc/profile </p>
+<p>6.测试安装是否成功</p>
+<p><img src="https://i.loli.net/2020/11/11/8LUd5ljJTwPSCVO.png" alt="验证.png"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">敲代码的小帅帅</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2020/11/09/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">http://example.com/2020/11/09/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">kyrieIrving</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/weichat.png" target="_blank"><img class="post-qr-code-img" src="/kyrie.github.io/img/weichat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/zhifubao.png" target="_blank"><img class="post-qr-code-img" src="/kyrie.github.io/img/zhifubao.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/kyrie.github.io/2020/11/18/JSP%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/"><img class="prev-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/kyrie.github.io/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/kyrie.github.io/2020/11/08/python0%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/kyrie.github.io/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Python基础</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/kyrie.github.io/img/yao.png" onerror="this.onerror=null;this.src='/kyrie.github.io/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">敲代码的小帅帅</div><div class="author-info__description">永远不停的在敲代码</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/kyrie.github.io/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/asdfdasdfasf/kyrie.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/kyrie.github.io/1226449275@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.baidu.com" target="_blank" title="ICon"><i class="fas fa-anchor"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">今天不努力，明天变废物，大家也要加油哟！</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title%EF%BC%9A-Linux%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text">title： Linux相关内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text">Linux的目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%9A%84%E8%BF%9C%E7%A8%8B%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">Linux的远程操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim%E5%92%8Cvi%E7%9A%84%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="toc-number">4.</span> <span class="toc-text">vim和vi的相关操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E4%B8%AD%E7%9A%84%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-number">5.</span> <span class="toc-text">Linux中的用户管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E4%B8%AD%E7%9A%84%E7%BB%84%E7%AE%A1%E7%90%86"><span class="toc-number">6.</span> <span class="toc-text">Linux中的组管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E4%B8%AD%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="toc-number">7.</span> <span class="toc-text">Linux中的系统操作命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E4%B8%AD%E7%9A%84%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4"><span class="toc-number">8.</span> <span class="toc-text">Linux中的帮助命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux%E4%B8%AD%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E7%9A%84%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="toc-number">9.</span> <span class="toc-text">linux中文件和目录的操作命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#linux%E4%B8%AD%E5%85%B3%E4%BA%8E%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4%E7%9A%84%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">9.0.1.</span> <span class="toc-text">linux中关于日期和时间的操作命令：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#linux%E4%B8%AD%E5%85%B3%E4%BA%8E%E6%90%9C%E7%B4%A2%E6%96%87%E4%BB%B6%E6%88%96%E8%80%85%E7%9B%AE%E5%BD%95%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-number">9.0.2.</span> <span class="toc-text">linux中关于搜索文件或者目录的命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#linux%E4%B8%AD%E6%9C%89%E5%85%B3%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-number">9.0.3.</span> <span class="toc-text">linux中有关压缩和解压的命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%9C%A8linux%E4%B8%AD%E5%AE%89%E8%A3%85JDK"><span class="toc-number">10.</span> <span class="toc-text">如何在linux中安装JDK</span></a></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/kyrie.github.io/2020/11/25/AJAX%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="无题"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/kyrie.github.io/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/kyrie.github.io/2020/11/25/AJAX%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="无题">无题</a><time datetime="2020-11-25T02:41:36.491Z" title="发表于 2020-11-25 10:41:36">2020-11-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/kyrie.github.io/2020/11/18/JSP%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" title="无题"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/kyrie.github.io/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/kyrie.github.io/2020/11/18/JSP%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" title="无题">无题</a><time datetime="2020-11-18T05:17:23.947Z" title="发表于 2020-11-18 13:17:23">2020-11-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/kyrie.github.io/2020/11/09/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="无题"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/kyrie.github.io/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/kyrie.github.io/2020/11/09/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="无题">无题</a><time datetime="2020-11-09T14:30:41.066Z" title="发表于 2020-11-09 22:30:41">2020-11-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/kyrie.github.io/2020/11/08/python0%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" title="Python基础"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/kyrie.github.io/img/404.jpg'" alt="Python基础"/></a><div class="content"><a class="title" href="/kyrie.github.io/2020/11/08/python0%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" title="Python基础">Python基础</a><time datetime="2020-11-08T09:28:53.704Z" title="发表于 2020-11-08 17:28:53">2020-11-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/kyrie.github.io/2020/11/05/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" title="Java基础知识"><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1603983928098&amp;di=79fabf49d6e8ab3cc8a4013e35915e5c&amp;imgtype=0&amp;src=http%3A%2F%2Fc2.hoopchina.com.cn%2Fuploads%2Fstar%2Fevent%2Fimages%2F200105%2Fab31082ad6c8121fba58220ea18cdb4f003242ef.jpg" onerror="this.onerror=null;this.src='/kyrie.github.io/img/404.jpg'" alt="Java基础知识"/></a><div class="content"><a class="title" href="/kyrie.github.io/2020/11/05/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" title="Java基础知识">Java基础知识</a><time datetime="2020-11-05T07:28:32.148Z" title="发表于 2020-11-05 15:28:32">2020-11-05</time></div></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg)"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By 敲代码的小帅帅</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi，welcome to my <a target="_blank" rel="noopener" href="https://asdfdasdfasf.github.io/kyrie.github.io/">Blog</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/kyrie.github.io/js/utils.js"></script><script src="/kyrie.github.io/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'nR3SBROJndRxNjKcdWE8Ci4X-gzGzoHsz',
+      appKey: '0E3vJosp5cYjvoy8bSipQDu6',
+      placeholder: 'ヾﾉ≧∀≦)o 来呀！快活呀！~',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign({}, initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" async="async" mobile="true"></script></div></body></html>
